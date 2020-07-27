@@ -1,13 +1,29 @@
-let root = document.querySelector("#root");
+let nameField = document.querySelector("#nameField");
+let ul = document.querySelector("#nameList");
 
-let jumbotronDiv = document.createElement("div");
-jumbotronDiv.className = "jumbotron text-center";
-jumbotronDiv.setAttribute("id", "my-jmb");
+nameField.addEventListener("keypress", function (event) {
+  if (event.keyCode === 13) {
+    let name = event.target.value;
+    createLi(ul, name);
+    event.target.value = "";
+  }
+});
 
-let heading = document.createElement("h1");
-heading.className = "display-2 py-5";
-heading.innerHTML = "oaes kuruni";
+function createLi(ul, name) {
+  let li = document.createElement("li");
+  li.className = "list-group-item d-flex";
+  li.innerHTML = name;
 
-jumbotronDiv.appendChild(heading);
+  let span = document.createElement("span");
+  span.className = "ml-auto";
+  span.style.color = "red";
+  span.style.cursor = "pointer";
+  span.innerHTML = "X";
 
-root.appendChild(jumbotronDiv);
+  span.addEventListener("click", function () {
+    ul.removeChild(li);
+  });
+
+  li.appendChild(span);
+  ul.appendChild(li);
+}
