@@ -1,32 +1,13 @@
-import "../styles/index.scss";
-
-
-function $(selector){
-    return document.querySelector(selector)
-}
-
-let btn = $("#open");
-let colors = ["cyan", "tomato", "lime", "blue"];
-
-let i = 0;
+let btn = document.querySelector("#btn");
+let p = document.querySelector("#para");
+let para = false;
 
 btn.addEventListener("click", function () {
-  let h1 = $(".heading");
-  h1.style.background = colors[i];
-
-  if (i > colors.length) {
-    i = 0;
+  if (para) {
+    (p.style.visibility = "hidden"), (para = false);
+    btn.innerHTML = "show";
   } else {
-    i++;
+    (p.style.visibility = "visible"), (para = true);
+    btn.innerHTML = "hide";
   }
 });
-
-// basic styling
-
-let headStyle = {
-fontSize:'2rem',
-color:'black',
-fontFamily:'san serif',
-padding:'30px'
-}
-Object.assign($('#heading').style, headStyle)
