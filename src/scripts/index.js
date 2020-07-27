@@ -1,13 +1,13 @@
-let btn = document.querySelector("#btn");
-let p = document.querySelector("#para");
-let para = false;
+let root = document.querySelector("#root");
 
-btn.addEventListener("click", function () {
-  if (para) {
-    (p.style.visibility = "hidden"), (para = false);
-    btn.innerHTML = "show";
-  } else {
-    (p.style.visibility = "visible"), (para = true);
-    btn.innerHTML = "hide";
-  }
-});
+let jumbotronDiv = document.createElement("div");
+jumbotronDiv.className = "jumbotron text-center";
+jumbotronDiv.setAttribute("id", "my-jmb");
+
+let heading = document.createElement("h1");
+heading.className = "display-2 py-5";
+heading.innerHTML = "oaes kuruni";
+
+jumbotronDiv.appendChild(heading);
+
+root.appendChild(jumbotronDiv);
