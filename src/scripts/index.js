@@ -20,3 +20,9 @@ btn.addEventListener("click", function () {
     i++;
   }
 });
+
+// basic styling
+let p =$('.para')
+p.style.color='tomato'
+p.style.fontSize='1rem'
+p.style.padding='5px'
