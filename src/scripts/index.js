@@ -22,7 +22,11 @@ btn.addEventListener("click", function () {
 });
 
 // basic styling
-let p =$('.para')
-p.style.color='tomato'
-p.style.fontSize='1rem'
-p.style.padding='5px'
+
+let headStyle = {
+fontSize:'2rem',
+color:'black',
+fontFamily:'san serif',
+padding:'30px'
+}
+Object.assign($('#heading').style, headStyle)
